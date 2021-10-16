@@ -5,16 +5,16 @@
 <title>Random fail GIFs</title>
 <style>
 #gif-wrap {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
-	background-color: #000;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #000;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -37,8 +37,8 @@ function utf8ToB64(str) {
   return window.btoa(unescape(encodeURIComponent(str)));
 }
 $(document).ready(function() {
-	var refresh;
-	const duration = 1000 * 10,
+  var refresh;
+  const duration = 1000 * 10,
     giphy = {
       baseURL: "https://api.giphy.com/v1/gifs/",
       key: "uIUmY5KjLIpriz1PZhlFp66fnio9kvvQ",
@@ -46,7 +46,7 @@ $(document).ready(function() {
       type: "random",
       rating: "pg-13"
     },
-	  $gif_wrap = $("#gif-wrap"),
+    $gif_wrap = $("#gif-wrap"),
     refreshRate = () => {
       clearInterval(refresh);
       refresh = setInterval(function() {
@@ -71,7 +71,7 @@ $(document).ready(function() {
     }
   ;
   let giphyURL = encodeURI(giphy.baseURL + giphy.type + "?api_key=" + giphy.key + "&tag=" + giphy.tag + "&rating=" + giphy.rating);
-	$.getJSON(giphyURL, json => renderGif(json.data));
+  $.getJSON(giphyURL, json => renderGif(json.data));
 });
 </script>
 </body>
