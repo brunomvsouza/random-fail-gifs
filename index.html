@@ -47,7 +47,7 @@ $(document).ready(function() {
       const stateURL = '/giphy/' + giphyData.id + '/' + giphyData.slug + '.html';
       window.history.replaceState({}, document.title, stateURL);
       $gif.css({
-        "background-image": 'url("' + giphyData.image_original_url + '")'
+        "background-image": 'url("' + giphyData.images.original.url + '")'
       });
       try {
         gtag('event', 'page_view', {
